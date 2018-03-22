@@ -7,7 +7,8 @@ filetype off                  " required
 " PLUGINS
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin()
+let vundle_path='~/.config/nvim/bundle'
+call vundle#begin(vundle_path)
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
