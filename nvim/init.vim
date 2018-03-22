@@ -3,13 +3,12 @@ set laststatus=2
 set clipboard=unnamed
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
+" PLUGINS
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
@@ -21,31 +20,22 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'milkypostman/vim-togglelist'
-
+Plugin 'mhartington/oceanic-next'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for morls or wiki for FAQ
-" Put your non-Plugin stuff after this line
-" 
 
 set noshowmode
 set background=dark
+
 colorscheme one-dark
-"colorscheme deep-space
-let g:airline_theme='deep_space'
+let g:airline_theme='deep_space_one'
+
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 
 let g:deepspace_italics = 1 " Enable terminal italics
-let g:NERDTreeHijackNetrw=0
+let g:NERDTreeHijackNetrw=1
 let NERDTreeMapOpenExpl=''
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
@@ -76,8 +66,6 @@ endif
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
-
-filetype plugin indent on
 
 augroup vimrcEx
   autocmd!
@@ -241,6 +229,7 @@ vnoremap y h
 nnoremap H Y
 nnoremap Y H
 
+nnoremap t :
 let g:fugitive_no_maps = 1
 let g:surround_no_mappings = 1
 
