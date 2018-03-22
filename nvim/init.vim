@@ -6,7 +6,7 @@ filetype off                  " required
 
 " PLUGINS
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -28,9 +28,10 @@ filetype plugin indent on    " required
 set noshowmode
 set background=dark
 
-colorscheme one-dark
-let g:airline_theme='deep_space_one'
+colorscheme deep-space-one
 
+let g:airline_theme='deep_space_one'
+let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
@@ -39,8 +40,8 @@ let g:NERDTreeHijackNetrw=1
 let NERDTreeMapOpenExpl=''
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+let NERDTreeQuitOnOpen=1
+set runtimepath^=~/.config/nvim/bundle/ctrlp.vim
 " Leader
 let mapleader = " "
 
@@ -167,9 +168,6 @@ nnoremap X :x<cr>
 
 map <C-i> :NERDTreeToggle<CR>
 map <C-l> :SyntasticCheck<CR>
-
-"Git and managed outside of thoughtbot/dotfiles using rcm.
-set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
