@@ -10,6 +10,7 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 let vundle_path='~/.config/nvim/bundle'
 call vundle#begin(vundle_path)
 
+Plugin 'tpope/vim-endwise'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
@@ -36,7 +37,7 @@ let g:airline_right_sep = ''
 
 " NERD 
 let g:deepspace_italics = 1 " Enable terminal italics
-let g:NERDTreeHijackNetrw=1
+let g:NERDTreeHijackNetrw=0
 let NERDTreeMapOpenExpl=''
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
