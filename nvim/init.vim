@@ -1,8 +1,8 @@
-let g:toggle_list_no_mappings=1
 set laststatus=2
 set clipboard=unnamed
 set nocompatible              " be iMproved, required
 filetype off                  " required
+syntax on
 
 " PLUGINS
 " set the runtime path to include Vundle and initialize
@@ -15,37 +15,50 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'milkypostman/vim-togglelist'
-Plugin 'mhartington/oceanic-next'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" THEME
 set noshowmode
 set background=dark
-
 colorscheme deep-space-one
-
 let g:airline_theme='deep_space_one'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
+" NERD 
 let g:deepspace_italics = 1 " Enable terminal italics
 let g:NERDTreeHijackNetrw=1
 let NERDTreeMapOpenExpl=''
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen=1
-set runtimepath^=~/.config/nvim/bundle/ctrlp.vim
-" Leader
-let mapleader = " "
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+map <C-i> :NERDTreeToggle<CR>
+command! E :Explore
 
+" SYNTASTIC
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+map <C-l> :SyntasticCheck<CR>
+
+" GENERAL
+set runtimepath^=~/.config/nvim/bundle/ctrlp.vim
+let mapleader = " "
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
@@ -56,18 +69,11 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
-let g:netrw_liststyle = 3
-let g:netrw_banner = 0
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-endif
-
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-endif
+" NO MAPPINGS
+let g:toggle_list_no_mappings=1
+let g:fugitive_no_maps = 1
+let g:surround_no_mappings = 1
 
 augroup vimrcEx
   autocmd!
@@ -111,7 +117,7 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden --ignore .git -g "" %s'
   let g:ctrlp_use_caching = 0
-endif 
+endif
 nnoremap <leader>i :AsyncGrep "<C-R><C-W>"<CR>
 nnoremap F :AsyncGrep<space>
 
@@ -134,14 +140,12 @@ set numberwidth=5
 nnoremap <leader><leader> <c-^>
 
 " Netrw explore
-command! E :Explore
 
 " Remove Whitespace
 command! Ws :%s/\s\+$//e
 
 " Reindent File
 command! If exec "normal gg=G"
-
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -167,8 +171,6 @@ nmap <script> <silent> <C-y> :call ToggleQuickfixList()<CR><Paste>
 nnoremap Q :q<cr>
 nnoremap X :x<cr>
 
-map <C-i> :NERDTreeToggle<CR>
-map <C-l> :SyntasticCheck<CR>
 
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
@@ -177,7 +179,6 @@ set complete+=kspell
 set diffopt+=vertical
 
 " ===== Seeing Is Believing =====
-
 " Annotate every line
   nmap <leader>bb :%!seeing_is_believing --timeout 12 --line-length 500 --number-of-captures 300 --alignment-strategy chunk<CR><Esc><Esc>;
 " Annotate marked lines
@@ -188,14 +189,6 @@ set diffopt+=vertical
   nmap <leader>be A # => <Esc>
 " Mark the highlighted lines for annotation
   vmap <leader>be :norm A # => <Esc>
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Workman Layout
 nnoremap l o
@@ -229,8 +222,6 @@ nnoremap H Y
 nnoremap Y H
 
 nnoremap t :
-let g:fugitive_no_maps = 1
-let g:surround_no_mappings = 1
 
 " Surround.vim remaps
 nmap ds <Plug>Dsurround
