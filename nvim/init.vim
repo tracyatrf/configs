@@ -3,13 +3,14 @@ set clipboard=unnamed
 set nocompatible              " be iMproved, required
 filetype off                  " required
 syntax on
-
+set termguicolors
 " PLUGINS
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 let vundle_path='~/.config/nvim/bundle'
 call vundle#begin(vundle_path)
 
+Plugin 'rakr/vim-one'
 Plugin 'tpope/vim-endwise'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
@@ -30,12 +31,13 @@ filetype plugin indent on    " required
 set noshowmode
 set background=dark
 colorscheme deep-space-one
+"colorscheme one
 let g:airline_theme='deep_space_one'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
-" NERD 
+" NERD
 let g:deepspace_italics = 1 " Enable terminal italics
 let g:NERDTreeHijackNetrw=0
 let NERDTreeMapOpenExpl=''
@@ -196,6 +198,7 @@ nnoremap l o
 nnoremap o l
 nnoremap L O
 vnoremap l o
+vnoremap o l
 vnoremap s l
 nnoremap O L
 nnoremap j n
@@ -223,6 +226,7 @@ nnoremap H Y
 nnoremap Y H
 
 nnoremap t :
+nnoremap T :tabnew<CR>
 
 " Surround.vim remaps
 nmap ds <Plug>Dsurround
