@@ -20,7 +20,7 @@ hi LineNr guifg=#223247 ctermfg=237
 hi TabLineFill guibg=#111b27 guifg=#111b27
 hi TabLine guibg=#323c4d guifg=#9aa7bd
 hi Title guifg=#cc7676 
-
+hi Visual guibg=#51617d guifg=#5fd7ff  gui=none
 if &termguicolors == 1 
 "======SYNTAX======="
 " Symbol, hash key
@@ -40,6 +40,8 @@ hi rubyAttribute guifg=#a8a5d1
 hi rubyException guifg=#f44242
 hi Search guibg=#c13636 guifg=white
 hi CursorLine guibg=#232a36
+
+hi jsonKeyword guifg=#7bffa0
 
 hi NERDTreeCWD guifg=#cc7676
 endif

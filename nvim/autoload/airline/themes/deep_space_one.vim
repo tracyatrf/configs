@@ -1,6 +1,6 @@
 " ------------------------------------------------------
-"  Deep Space theme for vim-airline
-"  (https://github.com/tyrannicaltoucan/vim-deep-space)
+"  Deep Space One theme for vim-airline
+"  By Tracy Meade
 " ------------------------------------------------------
 
 let g:airline#themes#deep_space_one#palette = {}

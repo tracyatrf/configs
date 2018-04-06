@@ -43,7 +43,7 @@ let g:NERDTreeHijackNetrw=0
 let NERDTreeMapOpenExpl=''
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=0
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 map <C-i> :NERDTreeToggle<CR>
@@ -53,6 +53,7 @@ command! E :Explore
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:syntastic_mode="passive"
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
