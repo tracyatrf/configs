@@ -5,7 +5,8 @@ if exists("syntax_on")
   syntax reset
 endif
 let g:colors_name="deep-space-one"
-
+hi PmenuSel guibg=#232a36 guifg=white
+hi Pmenu guibg=#323c4d gui=bold
 hi Bold gui=bold cterm=bold
 hi ColorColumn guibg=#303030 ctermbg=236 gui=NONE cterm=NONE
 hi Conceal gui=NONE cterm=NONE
@@ -21,7 +22,14 @@ hi TabLineFill guibg=#111b27 guifg=#111b27
 hi TabLine guibg=#323c4d guifg=#9aa7bd
 hi Title guifg=#cc7676 
 hi Visual guibg=#51617d guifg=#5fd7ff  gui=none
+hi FoldColumn guibg=#111b27 guifg=#223247
+hi Folded guibg=#cc7676
+hi DiffAdd guibg=#cc7676
+hi DiffDelete guibg=#111b28 guifg=#303030 
+hi StatusLine guibg=white guifg=#111b28
+hi WildMenu guifg=#white guibg=#cc7676
 if &termguicolors == 1 
+
 "======SYNTAX======="
 " Symbol, hash key
 hi Constant guifg=#91a7ff

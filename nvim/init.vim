@@ -1,3 +1,6 @@
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 set laststatus=2
 set clipboard=unnamed
 set nocompatible              " be iMproved, required
@@ -10,6 +13,9 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 let vundle_path='~/.config/nvim/bundle'
 call vundle#begin(vundle_path)
 
+Plugin 'neomake/neomake'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'fishbullet/deoplete-ruby'
 Plugin 'rakr/vim-one'
 Plugin 'tpope/vim-endwise'
 Plugin 'VundleVim/Vundle.vim'
@@ -17,7 +23,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'thoughtbot/vim-rspec'
@@ -26,6 +31,21 @@ Plugin 'milkypostman/vim-togglelist'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+let g:deoplete#enable_at_startup = 1
+inoremap <expr> <Tab>  pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
+inoremap <expr> <S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+ " When writing a buffer (no delay).
+ call neomake#configure#automake('w')
+ " When writing a buffer (no delay), and on normal mode changes (after750ms).
+ call neomake#configure#automake('nw', 750)
+ " When reading a buffer (after 1s), and when writing (no delay).
+ call neomake#configure#automake('rw', 1000)
+ " Full config: when writing or reading a buffer, and on changes in insert and
+ " normal mode (after 1s; no delay when writing).
+ call neomake#configure#automake('nrwi', 500)
+let g:deoplete#disable_auto_complete = 1
+"inoremap <expr> <Tab>  deoplete#mappings#manual_complete()
 
 " THEME
 set noshowmode
@@ -168,7 +188,7 @@ nnoremap <leader>o <C-w>l
 nnoremap <C-e> :cp<CR>zvzz
 nnoremap <C-n> :cn<CR>zvzz
 nmap <script> <silent> <C-k> :call ToggleLocationList()<CR>
-nmap <script> <silent> <C-y> :call ToggleQuickfixList()<CR><Paste>
+nmap <script> <silent> <C-y> :call ToggleQuickfixList()<CR>
 
 " Convenience
 :nmap ; :
