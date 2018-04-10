@@ -30,6 +30,7 @@ hi StatusLine guibg=white guifg=#111b28
 hi WildMenu guifg=#white guibg=#cc7676
 if &termguicolors == 1 
 
+
 "======SYNTAX======="
 " Symbol, hash key
 hi Constant guifg=#91a7ff
@@ -51,6 +52,9 @@ hi CursorLine guibg=#232a36
 
 hi jsonKeyword guifg=#7bffa0
 
+
+let g:neomake_error_sign={'text': '❗️ ', 'texthl': 'Normal'}
+let g:neomake_warning_sign={'text': '⚠️ ', 'texthl': 'Normal'}
 hi NERDTreeCWD guifg=#cc7676
 endif
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'

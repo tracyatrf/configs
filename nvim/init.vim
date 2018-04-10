@@ -73,12 +73,6 @@ command! E :Explore
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_mode="passive"
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-map <C-l> :SyntasticCheck<CR>
 
 " GENERAL
 set runtimepath^=~/.config/nvim/bundle/ctrlp.vim
@@ -195,6 +189,8 @@ nmap <script> <silent> <C-y> :call ToggleQuickfixList()<CR>
 nnoremap Q :q<cr>
 nnoremap X :x<cr>
 
+nmap <C-l> ]mzz
+nmap <C-k> [mzz
 
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
