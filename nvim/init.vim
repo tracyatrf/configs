@@ -13,6 +13,8 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 let vundle_path='~/.config/nvim/bundle'
 call vundle#begin(vundle_path)
 
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'elzr/vim-json'
 Plugin 'neomake/neomake'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'fishbullet/deoplete-ruby'
@@ -30,7 +32,11 @@ Plugin 'milkypostman/vim-togglelist'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+
 let g:deoplete#enable_at_startup = 1
 inoremap <expr> <Tab>  pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
 inoremap <expr> <S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -46,6 +52,8 @@ inoremap <expr> <S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"
  call neomake#configure#automake('nrwi', 500)
 let g:deoplete#disable_auto_complete = 1
 "inoremap <expr> <Tab>  deoplete#mappings#manual_complete()
+let g:vim_json_syntax_conceal = 0
+let g:ruby_indent_block_style = 'do'
 
 " THEME
 set noshowmode
@@ -64,6 +72,7 @@ let NERDTreeMapOpenExpl=''
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen=0
+map <leader><tab> :NERDTreeFind<CR>
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 map <C-i> :NERDTreeToggle<CR>
@@ -88,11 +97,17 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 
+
 " NO MAPPINGS
 let g:toggle_list_no_mappings=1
 let g:fugitive_no_maps = 1
 let g:surround_no_mappings = 1
 
+" FUGITIVE
+nnoremap gd :Gdiff<CR>
+nnoremap gs :Gstatus<CR>
+
+autocmd BufNewFile,BufRead *.json set ft=javascript
 augroup vimrcEx
   autocmd!
 
@@ -138,7 +153,7 @@ if executable('ag')
 endif
 nnoremap <leader>i :AsyncGrep "<C-R><C-W>"<CR>
 nnoremap F :AsyncGrep<space>
-
+nnoremap \ :noh<CR>
 let g:asyncrun_trim = 1
 command! -nargs=1 AsyncGrep
       \ call setqflist([])
@@ -149,6 +164,10 @@ command! -nargs=1 AsyncGrep
 " ignore .git files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+" Json
+command! Json execute '%!python -m json.tool'
+command! JSON execute '%!python -m json.tool' | execute 'If' | set ft=JSON
 
 " Numbers
 set number
@@ -190,7 +209,7 @@ nnoremap Q :q<cr>
 nnoremap X :x<cr>
 
 nmap <C-l> ]mzz
-nmap <C-k> [mzz
+nmap <C-space> [mzz
 
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
@@ -242,7 +261,6 @@ vnoremap y h
 nnoremap H Y
 nnoremap Y H
 
-nnoremap t :
 nnoremap T :tabnew<CR>
 
 " Surround.vim remaps

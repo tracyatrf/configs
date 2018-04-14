@@ -17,7 +17,8 @@ hi Directory guifg=#5fd7ff ctermfg=81 gui=NONE cterm=NONE
 hi Normal guifg=white ctermfg=white guibg=#172333 ctermbg=black gui=NONE 
 hi VertSplit guibg=#111b28  guifg=#111b28 ctermbg=white ctermfg=black
 hi EndOfBuffer guifg=#111b28 guibg=#111b28 ctermfg=black ctermbg=000
-hi LineNr guifg=#223247 ctermfg=237
+"hi LineNr guifg=#223247 ctermfg=237
+hi LineNr guifg=#2f425b ctermfg=237
 hi TabLineFill guibg=#111b27 guifg=#111b27
 hi TabLine guibg=#323c4d guifg=#9aa7bd
 hi Title guifg=#cc7676 
@@ -52,9 +53,6 @@ hi CursorLine guibg=#232a36
 
 hi jsonKeyword guifg=#7bffa0
 
-
-let g:neomake_error_sign={'text': '❗️ ', 'texthl': 'Normal'}
-let g:neomake_warning_sign={'text': '⚠️ ', 'texthl': 'Normal'}
 hi NERDTreeCWD guifg=#cc7676
 endif
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
