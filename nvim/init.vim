@@ -106,6 +106,7 @@ let g:surround_no_mappings = 1
 " FUGITIVE
 nnoremap gd :Gdiff<CR>
 nnoremap gs :Gstatus<CR>
+nnoremap du :diffupdate<CR>
 
 autocmd BufNewFile,BufRead *.json set ft=javascript
 augroup vimrcEx
