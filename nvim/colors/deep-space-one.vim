@@ -17,7 +17,8 @@ hi Directory guifg=#5fd7ff ctermfg=81 gui=NONE cterm=NONE
 hi Normal guifg=white ctermfg=white guibg=#172333 ctermbg=black gui=NONE 
 hi VertSplit guibg=#111b28  guifg=#111b28 ctermbg=white ctermfg=black
 hi EndOfBuffer guifg=#111b28 guibg=#111b28 ctermfg=black ctermbg=000
-"hi LineNr guifg=#223247 ctermfg=237
+hi! link SignColumn LineNr
+"hi SignColumn guibg=#111b28
 hi LineNr guifg=#2f425b ctermfg=237
 hi TabLineFill guibg=#111b27 guifg=#111b27
 hi TabLine guibg=#323c4d guifg=#9aa7bd
@@ -27,10 +28,8 @@ hi FoldColumn guibg=#111b27 guifg=#223247
 hi Folded guibg=#cc7676
 hi DiffAdd guibg=#cc7676
 hi DiffDelete guibg=#111b28 guifg=#303030 
-hi StatusLine guibg=white guifg=#111b28
-hi WildMenu guifg=#white guibg=#cc7676
-if &termguicolors == 1 
-
+hi StatusLine guibg=#111b28 guifg=#111b28
+hi WildMenu guifg=white guibg=#cc7676
 
 "======SYNTAX======="
 " Symbol, hash key
@@ -52,9 +51,4 @@ hi Search guibg=#c13636 guifg=white
 hi CursorLine guibg=#232a36
 
 hi jsonKeyword guifg=#7bffa0
-
 hi NERDTreeCWD guifg=#cc7676
-endif
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>

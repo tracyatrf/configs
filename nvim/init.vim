@@ -41,19 +41,35 @@ let g:deoplete#enable_at_startup = 1
 inoremap <expr> <Tab>  pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
 inoremap <expr> <S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
- " When writing a buffer (no delay).
- call neomake#configure#automake('w')
- " When writing a buffer (no delay), and on normal mode changes (after750ms).
- call neomake#configure#automake('nw', 750)
- " When reading a buffer (after 1s), and when writing (no delay).
- call neomake#configure#automake('rw', 1000)
- " Full config: when writing or reading a buffer, and on changes in insert and
- " normal mode (after 1s; no delay when writing).
- call neomake#configure#automake('nrwi', 500)
+"set signcolumn=yes
+
+augroup NERDy
+  autocmd!
+  autocmd FileType tagbar,nerdtree setlocal signcolumn=no
+  autocmd VimEnter * NERDTree
+augroup END
+
+"normal mode (after 1s; no delay when writing).
+call neomake#configure#automake('nrw', 250)
+
 let g:deoplete#disable_auto_complete = 1
-"inoremap <expr> <Tab>  deoplete#mappings#manual_complete()
 let g:vim_json_syntax_conceal = 0
 let g:ruby_indent_block_style = 'do'
+
+" GENERAL
+set runtimepath^=~/.config/nvim/bundle/ctrlp.vim
+let mapleader = " "
+set backspace=2   " Backspace deletes like most programs in insert mode
+set nobackup
+set nowritebackup
+set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set history=50
+set ruler         " show the cursor position all the time
+set showcmd       " display incomplete commands
+set incsearch     " do incremental searching
+set laststatus=2  " Always display the status line
+set autowrite     " Automatically :write before running commands
+let g:gitgutter_override_sign_column_highlight = 1
 
 " THEME
 set noshowmode
@@ -72,31 +88,11 @@ let NERDTreeMapOpenExpl=''
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen=0
-map <leader><tab> :NERDTreeFind<CR>
+let NERDTreeStatusline="NERD"
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
-map <C-i> :NERDTreeToggle<CR>
-command! E :Explore
-
-" SYNTASTIC
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" GENERAL
-set runtimepath^=~/.config/nvim/bundle/ctrlp.vim
-let mapleader = " "
-set backspace=2   " Backspace deletes like most programs in insert mode
-set nobackup
-set nowritebackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
-set history=50
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
-
+nmap <C-i> :NERDTreeToggle<CR>
+nmap <leader><tab> :NERDTreeFind<CR>
 
 " NO MAPPINGS
 let g:toggle_list_no_mappings=1
@@ -107,8 +103,13 @@ let g:surround_no_mappings = 1
 nnoremap gd :Gdiff<CR>
 nnoremap gs :Gstatus<CR>
 nnoremap du :diffupdate<CR>
+nnoremap gc :Gcommit<CR>
 
-autocmd BufNewFile,BufRead *.json set ft=javascript
+augroup setJS
+  autocmd!
+  autocmd BufNewFile,BufRead *.json set ft=javascript
+augroup END
+
 augroup vimrcEx
   autocmd!
 
@@ -153,8 +154,8 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 nnoremap <leader>i :AsyncGrep "<C-R><C-W>"<CR>
-nnoremap F :AsyncGrep<space>
-nnoremap \ :noh<CR>
+nnoremap \ :AsyncGrep<space>
+nnoremap <leader>f :noh<CR>
 let g:asyncrun_trim = 1
 command! -nargs=1 AsyncGrep
       \ call setqflist([])
@@ -169,6 +170,14 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 " Json
 command! Json execute '%!python -m json.tool'
 command! JSON execute '%!python -m json.tool' | execute 'If' | set ft=JSON
+
+function! ConvertFails()
+  :let @f='^dt.^hss"i- :filepath: l:result: FAILn'
+  exec "normal! gg".line('$')."@f"
+  normal! ggO---
+endfunction
+command! Fails call ConvertFails()
+
 
 " Numbers
 set number
@@ -198,18 +207,31 @@ nnoremap <leader>e <C-w>k
 nnoremap <leader>y <C-w>h
 nnoremap <leader>o <C-w>l
 
+nnoremap <leader>w <C-w>
+nnoremap <leader>t <C-w>s
+nnoremap <leader>g <C-w>v
+nnoremap <leader>sy <C-w>10<
+nnoremap <leader>so <C-w>10>
+
+nnoremap <leader>sn <C-w>5+
+nnoremap <leader>se <C-w>5-
+
 " Quicklish shortcuts
 nnoremap <C-e> :cp<CR>zvzz
 nnoremap <C-n> :cn<CR>zvzz
+
 nmap <script> <silent> <C-k> :call ToggleLocationList()<CR>
 nmap <script> <silent> <C-y> :call ToggleQuickfixList()<CR>
 
 " Convenience
 nnoremap Q :q<cr>
+command! Q exec 'q'
 nnoremap X :x<cr>
-
+nnoremap # :<C-U>exec v:count<CR>
 nmap <C-l> ]mzz
 nmap <C-space> [mzz
+nnoremap S :w<CR>
+nnoremap T :tabnew<CR>
 
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
@@ -261,8 +283,6 @@ vnoremap y h
 nnoremap H Y
 nnoremap Y H
 
-nnoremap T :tabnew<CR>
-
 " Surround.vim remaps
 nmap ds <Plug>Dsurround
 nmap cs <Plug>Csurround
@@ -277,3 +297,7 @@ xmap gS  <Plug>VgSurround
 " open and source vimrc
 command! Vo :tabe $MYVIMRC
 command! Vs :so $MYVIMRC | :AirlineRefresh
+
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
