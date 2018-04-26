@@ -46,7 +46,7 @@ inoremap <expr> <S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"
 augroup NERDy
   autocmd!
   autocmd FileType tagbar,nerdtree setlocal signcolumn=no
-  autocmd VimEnter * NERDTree
+  autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
 augroup END
 
 "normal mode (after 1s; no delay when writing).
@@ -107,7 +107,7 @@ nnoremap gc :Gcommit<CR>
 
 augroup setJS
   autocmd!
-  autocmd BufNewFile,BufRead *.json set ft=javascript
+  autocmd BufNewFile,BufRead *.json set ft=json
 augroup END
 
 augroup vimrcEx
