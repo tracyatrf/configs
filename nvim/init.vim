@@ -1,5 +1,8 @@
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+"put python host in ./local.vim
+"let g:python_host_prog = '/usr/bin/python'
+"let g:python3_host_prog = '/usr/local/bin/python3'
+
+runtime local.vim
 
 set laststatus=2
 set clipboard=unnamed
@@ -108,6 +111,10 @@ nnoremap gc :Gcommit<CR>
 augroup setJS
   autocmd!
   autocmd BufNewFile,BufRead *.json set ft=json
+augroup END
+
+augroup redrawResize
+  autocmd VimResized * redraw!
 augroup END
 
 augroup vimrcEx
