@@ -32,6 +32,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'milkypostman/vim-togglelist'
+Plugin 'scrooloose/nerdcommenter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -49,11 +50,12 @@ inoremap <expr> <S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"
 augroup NERDy
   autocmd!
   autocmd FileType tagbar,nerdtree setlocal signcolumn=no
-  autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
+  autocmd VimEnter * if !argc() | NERDTree | endif
+  "autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
 augroup END
 
 "normal mode (after 1s; no delay when writing).
-call neomake#configure#automake('nrw', 250)
+"call neomake#configure#automake('nrw', 250)
 
 let g:deoplete#disable_auto_complete = 1
 let g:vim_json_syntax_conceal = 0
@@ -96,6 +98,7 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 nmap <C-i> :NERDTreeToggle<CR>
 nmap <leader><tab> :NERDTreeFind<CR>
+nmap <leader>qq :qa!<CR>
 
 " NO MAPPINGS
 let g:toggle_list_no_mappings=1
@@ -163,6 +166,7 @@ endif
 nnoremap <leader>i :AsyncGrep "<C-R><C-W>"<CR>
 nnoremap \ :AsyncGrep<space>
 nnoremap <leader>f :noh<CR>
+nnoremap <leader>p "0p
 let g:asyncrun_trim = 1
 command! -nargs=1 AsyncGrep
       \ call setqflist([])
@@ -188,7 +192,7 @@ command! Fails call ConvertFails()
 
 " Numbers
 set number
-set numberwidth=5
+set numberwidth=4
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
@@ -239,6 +243,13 @@ nmap <C-l> ]mzz
 nmap <C-space> [mzz
 nnoremap S :w<CR>
 nnoremap T :tabnew<CR>
+
+" Vim RSpec
+let g:rspec_runner = "os_x_iterm2"
+map <Leader>sc :call RunCurrentSpecFile()<CR>
+map <Leader>ss :call RunNearestSpec()<CR>
+map <Leader>sl :call RunLastSpec()<CR>
+map <Leader>sa :call RunAllSpecs()<CR>
 
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
