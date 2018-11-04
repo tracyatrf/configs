@@ -28,7 +28,7 @@ hi FoldColumn guibg=#111b27 guifg=#223247
 hi Folded guibg=#cc7676
 hi DiffAdd guibg=#cc7676
 hi DiffDelete guibg=#111b28 guifg=#303030 
-hi StatusLine guibg=#111b28 guifg=#111b28
+hi StatusLine guibg=#2f425b  guifg=#111b28
 hi WildMenu guifg=white guibg=#cc7676
 
 "======SYNTAX======="

@@ -33,7 +33,7 @@ Plugin 'skywind3000/asyncrun.vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'milkypostman/vim-togglelist'
 Plugin 'scrooloose/nerdcommenter'
-
+Plugin 'mkitt/tabline.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -96,7 +96,7 @@ let NERDTreeQuitOnOpen=0
 let NERDTreeStatusline="NERD"
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
-nmap <C-i> :NERDTreeToggle<CR>
+nmap <tab> :NERDTreeToggle<CR>
 nmap <leader><tab> :NERDTreeFind<CR>
 nmap <leader>qq :qa!<CR>
 
@@ -163,10 +163,14 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden --ignore .git -g "" %s'
   let g:ctrlp_use_caching = 0
 endif
-nnoremap <leader>i :AsyncGrep "<C-R><C-W>"<CR>
+
+"nnoremap <leader>i :AsyncGrep "<C-R><C-W>"<CR>
 nnoremap \ :AsyncGrep<space>
 nnoremap <leader>f :noh<CR>
 nnoremap <leader>p "0p
+nnoremap <S-Tab> :CtrlPBuffer<CR>
+nnoremap <leader>i :CtrlPTag<CR>
+
 let g:asyncrun_trim = 1
 command! -nargs=1 AsyncGrep
       \ call setqflist([])
@@ -243,6 +247,10 @@ nmap <C-l> ]mzz
 nmap <C-space> [mzz
 nnoremap S :w<CR>
 nnoremap T :tabnew<CR>
+nnoremap tt <C-]>zz
+nnoremap <C-t> <C-t>zz
+nnoremap th gt
+nnoremap gt gT
 
 " Vim RSpec
 let g:rspec_runner = "os_x_iterm2"
@@ -289,8 +297,11 @@ nnoremap k e
 nnoremap e k
 vnoremap k e
 vnoremap e k
+onoremap k e
+onoremap K E
 nnoremap K E
 nnoremap E K
+vnoremap K E
 nnoremap gk ge
 nnoremap ge gk
 nnoremap y h
@@ -315,6 +326,19 @@ xmap gS  <Plug>VgSurround
 " open and source vimrc
 command! Vo :tabe $MYVIMRC
 command! Vs :so $MYVIMRC | :AirlineRefresh
+
+augroup suffixes
+    autocmd!
+
+    let associations = [
+                \["javascript", ".js,.javascript,.es,.esx,.json"],
+                \["ruby", ".rb,.erb"]
+                \]
+
+    for ft in associations
+        execute "autocmd FileType " . ft[0] . " setlocal suffixesadd=" . ft[1]
+    endfor
+augroup END
 
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
