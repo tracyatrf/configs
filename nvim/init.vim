@@ -34,12 +34,14 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'milkypostman/vim-togglelist'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mkitt/tabline.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
+
 
 let g:deoplete#enable_at_startup = 1
 inoremap <expr> <Tab>  pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
@@ -56,6 +58,8 @@ augroup END
 
 "normal mode (after 1s; no delay when writing).
 "call neomake#configure#automake('nrw', 250)
+" run neomake manually
+nmap <space>l :Neomake<CR>
 
 let g:deoplete#disable_auto_complete = 1
 let g:vim_json_syntax_conceal = 0
@@ -74,6 +78,10 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
+set colorcolumn=80
+set nowrap
+highlight ColorColumn guibg=#102330
+
 let g:gitgutter_override_sign_column_highlight = 1
 
 " THEME
@@ -111,13 +119,13 @@ nnoremap gs :Gstatus<CR>
 nnoremap du :diffupdate<CR>
 nnoremap gc :Gcommit<CR>
 
+augroup redrawResize
+  autocmd VimResized * redraw!
+augroup END
+
 augroup setJS
   autocmd!
   autocmd BufNewFile,BufRead *.json set ft=json
-augroup END
-
-augroup redrawResize
-  autocmd VimResized * redraw!
 augroup END
 
 augroup vimrcEx
@@ -134,6 +142,7 @@ augroup vimrcEx
   " Set syntax highlighting for specific file types
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
   autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufRead,BufNewFile *.spec set filetype=ruby
   autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
 augroup END
 
@@ -218,9 +227,13 @@ set splitright
 
 " Quicker window movement
 nnoremap <leader>n <C-w>j
+nnoremap <leader>N <C-w><S-j>
 nnoremap <leader>e <C-w>k
+nnoremap <leader>E <C-w><S-k>
 nnoremap <leader>y <C-w>h
+nnoremap <leader>Y <C-w><S-h>
 nnoremap <leader>o <C-w>l
+nnoremap <leader>O <C-w><S-l>
 
 nnoremap <leader>w <C-w>
 nnoremap <leader>t <C-w>s
@@ -247,7 +260,7 @@ nmap <C-l> ]mzz
 nmap <C-space> [mzz
 nnoremap S :w<CR>
 nnoremap T :tabnew<CR>
-nnoremap tt <C-]>zz
+nnoremap tt <C-]>zz^
 nnoremap <C-t> <C-t>zz
 nnoremap th gt
 nnoremap gt gT

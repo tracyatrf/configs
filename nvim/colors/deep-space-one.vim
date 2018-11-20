@@ -8,7 +8,7 @@ let g:colors_name="deep-space-one"
 hi PmenuSel guibg=#232a36 guifg=white
 hi Pmenu guibg=#323c4d gui=bold
 hi Bold gui=bold cterm=bold
-hi ColorColumn guibg=#303030 ctermbg=236 gui=NONE cterm=NONE
+hi ColorColumn guibg=#102330 ctermbg=236 gui=NONE cterm=NONE
 hi Conceal gui=NONE cterm=NONE
 hi Cursor guibg=#5f87ff ctermbg=69 gui=NONE cterm=NONE
 hi CursorColumn guibg=#303030 ctermbg=236 gui=NONE cterm=NONE
