@@ -8,7 +8,12 @@ nmap <C-l> ]mzz
 nmap <C-space> [mzz
 nnoremap S :w<CR>
 nnoremap T :tabnew<CR>
-nnoremap tt <C-]>zz^
+nnoremap gf gF
+
+" this fixes the wierd bang method ctag thing
+nnoremap <buffer><silent>  <C-]> :<C-U>exe v:count."tag <Plug><cword>"<CR>
+nmap tt <C-]>zz^
+
 nnoremap <C-t> <C-t>zz
 nnoremap th gt
 nnoremap gt gT

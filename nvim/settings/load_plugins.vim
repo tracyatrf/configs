@@ -8,6 +8,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'thoughtbot/vim-rspec'
 
+Plugin 'elixir-editors/vim-elixir'
 Plugin 'neomake/neomake'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'fishbullet/deoplete-ruby'

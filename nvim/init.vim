@@ -8,6 +8,7 @@ runtime settings/workman_layout.vim
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+runtime macros/matchit.vim
 runtime settings/load_plugins.vim
 
 filetype plugin indent on

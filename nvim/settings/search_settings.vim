@@ -9,6 +9,8 @@ endif
 "nnoremap <leader>i :AsyncGrep "<C-R><C-W>"<CR>
 nnoremap \ :AsyncGrep<space>
 nnoremap <leader>f :noh<CR>
+nnoremap <leader>j *
+nnoremap <leader>/ *
 nnoremap <leader>p "0p
 vnoremap <leader>p "0p
 nnoremap <S-Tab> :CtrlPBuffer<CR>

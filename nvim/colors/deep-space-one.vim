@@ -55,3 +55,7 @@ hi CursorLine guibg=#232a36
 
 hi jsonKeyword guifg=#7bffa0
 hi NERDTreeCWD guifg=#cc7676
+
+let g:terminal_color_4 = '#65b2ff'
+let g:terminal_color_3 = '#ffb378'
+let g:terminal_color_14 = '#00b6ff'

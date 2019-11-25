@@ -18,6 +18,8 @@ set colorcolumn=80
 set nowrap
 set updatetime=100
 
+set shell=zsh
+
 let g:ruby_indent_block_style = 'do'
 
 augroup redrawResize
@@ -48,6 +50,21 @@ set shiftwidth=2
 set shiftround
 set expandtab
 
+" minimum distance from curor to edge
+set scrolloff=2
+
+" set mouse use
+set mouse=a
+set scrolloff=2
+
+map <2-LeftMouse> <C-]>zz^
+
+map <S-LeftMouse> <LeftMouse>
+map <C-LeftMouse> <LeftMouse>
+map <2-C-LeftMouse> gF 
+map <2-S-LeftMouse> gF
+
+tnoremap <ESC> <C-\><C-n>
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 

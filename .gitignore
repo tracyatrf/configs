@@ -1,4 +1,6 @@
 /*
+!itermsettings
+!rubocop
 !nvim
 nvim/.DS_Store
 nvim/.netrwhist
