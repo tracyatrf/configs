@@ -19,21 +19,18 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd BufRead,BufNewFile *.spec set filetype=ruby
   autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
+  autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+
+  let associations = [
+        \["javascript", ".js,.javascript,.es,.esx,.json"],
+        \["ruby", ".rb,.erb"]
+        \]
+
+  for ft in associations
+    execute "autocmd FileType " . ft[0] . " setlocal suffixesadd=" . ft[1]
+  endfor
 augroup END
 
 " Json
 command! Json execute '%!python -m json.tool'
-command! JSON execute '%!python -m json.tool' | execute 'If' | set ft=JSON
-
-augroup suffixes
-    autocmd!
-
-    let associations = [
-                \["javascript", ".js,.javascript,.es,.esx,.json"],
-                \["ruby", ".rb,.erb"]
-                \]
-
-    for ft in associations
-        execute "autocmd FileType " . ft[0] . " setlocal suffixesadd=" . ft[1]
-    endfor
-augroup END
+command! JSON execute '%!python -m json.tool' | execute 'If' | set ft=json

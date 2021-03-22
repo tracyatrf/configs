@@ -12,3 +12,5 @@ nnoremap <leader>t <C-w>s
 nnoremap <leader>g <C-w>v
 nnoremap <leader>sy <C-w>10<
 nnoremap <leader>so <C-w>10>
+
+autocmd VimResized * wincmd =

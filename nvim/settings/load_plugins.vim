@@ -6,12 +6,16 @@ call vundle#begin(vundle_path)
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'kana/vim-textobj-user'
+Plugin 'rhysd/vim-textobj-ruby'
 Plugin 'thoughtbot/vim-rspec'
-
 Plugin 'elixir-editors/vim-elixir'
+Plugin 'udalov/kotlin-vim'
+
 Plugin 'neomake/neomake'
 Plugin 'Shougo/deoplete.nvim'
-Plugin 'fishbullet/deoplete-ruby'
+"Plugin 'fishbullet/deoplete-ruby'
+Plugin 'etordera/deoplete-ruby'
 Plugin 'hwartig/vim-seeing-is-believing'
 
 Plugin 'scrooloose/nerdtree'
@@ -26,10 +30,16 @@ Plugin 'tpope/vim-endwise'
 Plugin 'milkypostman/vim-togglelist'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mkitt/tabline.vim'
+
 Plugin 'hashivim/vim-terraform'
+
 Plugin 'elzr/vim-json'
 Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+
+"Plugin 'MaxMEllon/vim-jsx-pretty'
+Plugin 'arcticicestudio/nord-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

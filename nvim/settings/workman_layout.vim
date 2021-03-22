@@ -25,6 +25,8 @@ nnoremap E K
 vnoremap K E
 nnoremap gk ge
 nnoremap ge gk
+onoremap gk ge
+onoremap ge gk
 nnoremap y h
 onoremap h y
 nnoremap h y
@@ -32,4 +34,4 @@ vnoremap h y
 vnoremap y h
 nnoremap H Y
 nnoremap Y H
-
+inoremap <C-e> <C-p>

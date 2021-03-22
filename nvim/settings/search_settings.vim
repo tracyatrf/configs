@@ -2,7 +2,7 @@
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden --ignore .git -g "" %s'
+  let g:ctrlp_user_command = 'ag -Q -l --path-to-ignore ~/.config/nvim/.ignore --nocolor --hidden -g "" %s'
   let g:ctrlp_use_caching = 1
 endif
 
@@ -16,10 +16,12 @@ vnoremap <leader>p "0p
 nnoremap <S-Tab> :CtrlPBuffer<CR>
 nnoremap <leader>i :CtrlPTag<CR>
 
+nnoremap <C-F> <C-D>
+
 let g:asyncrun_trim = 1
 command! -nargs=1 AsyncGrep
       \ call setqflist([])
-      \ | execute 'AsyncRun! ag ' . <q-args>
+      \ | execute 'AsyncRun! ag --path-to-ignore ~/.config/nvim/.ignore ' . <q-args>
       \ | execute 'redraw'
       \ | execute 'copen'
 
@@ -30,3 +32,15 @@ nnoremap <C-n> :cn<CR>zvzz
 
 nmap <script> <silent> <C-k> :call ToggleLocationList()<CR>
 nmap <script> <silent> <C-y> :call ToggleQuickfixList()<CR>
+
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R>=&ic?'\c':'\C'<CR><C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gVzv:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R>=&ic?'\c':'\C'<CR><C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gVzv:call setreg('"', old_reg, old_regtype)<CR>

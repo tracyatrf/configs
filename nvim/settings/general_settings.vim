@@ -1,5 +1,3 @@
-"highlight ColorColumn guibg=#102330
-
 set termguicolors
 set laststatus=2
 set clipboard=unnamed
@@ -21,6 +19,7 @@ set updatetime=100
 set shell=zsh
 
 let g:ruby_indent_block_style = 'do'
+let g:ruby_indent_assignment_style = 'variable'
 
 augroup redrawResize
   autocmd VimResized * redraw!

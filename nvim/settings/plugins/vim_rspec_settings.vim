@@ -16,13 +16,16 @@ map <Leader>sl :call RunLastSpec()<CR>
 "map <Leader>sa :tabnew term://bundle exec rspec<CR>:startinsert<CR>
 map <Leader>sa :call RunAllSpecs()<CR>
 
-command! Seedless :exec Seedless()
-command! RspecDefault :exec RspecDefault()
 
-function Seedless()
+function! Seedless()
   let g:rspec_command = "tabnew term://bundle exec rspec --tag=~seeds {spec}"
 endfunction
 
-function RspecDefault()
+function! RspecDefault()
   let g:rspec_command = "tabnew term://bundle exec rspec {spec}"
 endfunction
+
+augroup Rspec
+  command! Seedless :exec Seedless()
+  command! RspecDefault :exec RspecDefault()
+augroup END
