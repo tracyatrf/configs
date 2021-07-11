@@ -6,25 +6,18 @@ if executable('ag')
   let g:ctrlp_use_caching = 1
 endif
 
-"nnoremap <leader>i :AsyncGrep "<C-R><C-W>"<CR>
-nnoremap \ :AsyncGrep<space>
+nnoremap \ :Telescope live_grep<CR>
+nnoremap <C-p> :Telescope find_files<CR>
+
 nnoremap <leader>f :noh<CR>
 nnoremap <leader>j *
 nnoremap <leader>/ *
 nnoremap <leader>p "0p
 vnoremap <leader>p "0p
-nnoremap <S-Tab> :CtrlPBuffer<CR>
-nnoremap <leader>i :CtrlPTag<CR>
+nnoremap <S-Tab> <cmd>Telescope buffers<cr>
+nnoremap <leader>i <cmd>Telescope help_tags<cr>
 
 nnoremap <C-F> <C-D>
-
-let g:asyncrun_trim = 1
-command! -nargs=1 AsyncGrep
-      \ call setqflist([])
-      \ | execute 'AsyncRun! ag --path-to-ignore ~/.config/nvim/.ignore ' . <q-args>
-      \ | execute 'redraw'
-      \ | execute 'copen'
-
 
 " Quicklish shortcuts
 nnoremap <C-e> :cp<CR>zvzz

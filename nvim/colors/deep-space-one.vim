@@ -18,17 +18,19 @@ hi Normal guifg=white ctermfg=white guibg=#172333 ctermbg=black gui=NONE
 hi VertSplit guibg=#111b28  guifg=#111b28 ctermbg=white ctermfg=black
 hi EndOfBuffer guifg=#111b28 guibg=#111b28 ctermfg=black ctermbg=000
 hi! link SignColumn LineNr
-"hi SignColumn guibg=#111b28
 hi LineNr guifg=#2f425b ctermfg=237
 hi TabLineFill guibg=#111b27 guifg=#111b27
 hi TabLine guibg=#323c4d guifg=#9aa7bd
 hi Title guifg=#cc7676 
 hi Visual guibg=#51617d guifg=#5fd7ff  gui=none
 hi FoldColumn guibg=#111b27 guifg=#223247
-hi Folded guibg=#cc7676
-hi DiffDelete guibg=#111b28 guifg=#303030 
+hi Folded guibg=#323c4d guifg=#9aa7bd
+
 hi StatusLine guibg=#2f425b  guifg=#111b28
 hi WildMenu guifg=white guibg=#cc7676
+
+"hi DiffAdd guibg=#91a7ff
+hi DiffDelete guibg=#111b28 guifg=#303030 
 
 highlight GitGutterAdd    guifg=#009900 ctermfg=2
 highlight GitGutterChange guifg=#bbbb00 ctermfg=3

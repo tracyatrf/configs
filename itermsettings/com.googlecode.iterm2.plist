@@ -8,26 +8,26 @@
 	<true/>
 	<key>Coprocess MRU</key>
 	<array>
-		<string>echo nvim /Users/tmeade/workspace/org-checker/generated/mismatched_reporting_account_ids.sorted +</string>
-		<string>echo nvim /Users/tmeade/workspace/org-checker/check.sh +</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/app/models/v1/organization_evolution.rb +46</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/lib/steps/get_accounts_users_data_by_email_step_spec.rb +4</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/lib/steps/create_v2_users_from_v1_account_views_as_admins_step_spec.rb +4</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/models/v1/admin_bootstrap_spec.rb +23</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/lib/v1/admin_bootstrap_workflow_spec.rb +252</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/lib/v1/organization_evolution_workflow_spec.rb +345</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/lib/v1/admin_bootstrap_workflow_spec.rb +246</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/lib/v1/onboarding_user_resource_migration_workflow_spec.rb +217</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/lib/v1/admin_bootstrap_workflow_spec.rb +77</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/lib/v1/migration_data_spec.rb +173</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/lib/v1/onboarding_user_resource_migration_workflow_spec.rb +341</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/app/models/organization.rb +93</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/app/models/v1/admin_bootstrap.rb +10</string>
-		<string>echo nvim /Users/tmeade/workspace/organization-service/non_partnership.raw.txt +</string>
-		<string>echo nvim /Users/tmeade/workspace/organization-service/partnership.raw.txt +</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/lib/steps/create_v2_admins_from_scratch_step_spec.rb +30</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/app/lib/steps/create_v2_admins_from_scratch_step.rb +</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/lib/steps/get_accounts_users_data_for_onboarding_migration_plan_step_spec.rb +208</string>
+		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/mailers/self_migration_request_mailer_spec.rb +19</string>
+		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/mailers/organization_evolution_mailer_spec.rb +19</string>
+		<string>echo nvim /Users/tmeade/workspace/evolutionator/app/mailers/self_migration_request_mailer.rb +</string>
+		<string>echo nvim /Users/tmeade/workspace/create-first-organization-admins/src/lib/url.ts +</string>
+		<string>echo nvim /Users/tmeade/workspace/rpm_site/app/controllers/api/v3/accounts_controller.rb +</string>
+		<string>echo nvim /Users/tmeade/workspace/evolutionator/app/models/organization.rb +220</string>
+		<string>echo nvim /Users/tmeade/workspace/rpm_site/test/functional/api/v3/accounts_controller_test.rb +1</string>
+		<string>echo nvim /Users/tmeade/.gem/ruby/2.7.2/extensions/x86_64-darwin-18/2.7.0-static/mysql2-0.3.21/mkmf.log +</string>
+		<string>echo nvim /Users/tmeade/workspace/organizations-ui/src/components/OrganizationDetail.tsx +</string>
+		<string>echo nvim /Users/tmeade/workspace/create-first-organization-admins/src/components/UnexpectedError.tsx +12</string>
+		<string>echo nvim /Users/tmeade/workspace/create-first-organization-admins/src/components/LandingPage.tsx +</string>
+		<string>echo nvim /Users/tmeade/workspace/create-first-organization-admins/src/components/UnexpectedError.tsx +</string>
+		<string>echo nvim /Users/tmeade/dbconsole-nr-env.rb +40</string>
+		<string>echo nvim /Users/tmeade/dbconsole-nr-env.rb +48</string>
+		<string>echo nvim /Users/tmeade/.emacs.d/.cache/layouts/persp-auto-save +</string>
+		<string>echo nvim /Users/tmeade/workspace/evolutionator/app/lib/steps/update_nerd_store_banner_flags_step.rb +11</string>
+		<string>echo nvim /Users/tmeade/workspace/create-first-organization-admins/nerdlets/create-first-organization-admins/index.tsx +</string>
+		<string>echo nvim /Users/tmeade/workspace/create-first-organization-admins/src/types/index.d.ts +</string>
+		<string>echo nvim /Users/tmeade/workspace/create-first-organization-admins/src/components/SetupComplete.tsx +</string>
+		<string>echo nvim /Users/tmeade/workspace/create-first-organization-admins/src/components/SetupComplete.tsx +5</string>
 	</array>
 	<key>Custom Color Presets</key>
 	<dict>
@@ -1740,7 +1740,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>MesloLGLDZ-RegularForPowerline 18</string>
+			<string>MonacoForPowerline 18</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>

@@ -8,11 +8,15 @@ nnoremap # :<C-U>exec v:count<CR>
 nnoremap gn <C-d>zz
 nnoremap ge <C-u>zz
 
-"stack"
 nmap <C-space> ]mzz
 nmap <C-a> [mzz
 
-nnoremap <C-l> <C-i>
+
+"forward in jumplist"
+nnoremap O <C-i>
+
+"only
+nnoremap <C-l> <cmd>only<CR>
 
 nnoremap <F1> $v%lohc<CR><CR><Up><C-r>"<Esc>:s/,/,\r/g<CR>:'[,']norm ==<CR>
 

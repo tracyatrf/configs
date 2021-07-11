@@ -35,3 +35,6 @@ runtime settings/plugins/togglelist_settings.vim
 runtime settings/plugins/seeing_is_believing_settings.vim
 runtime settings/plugins/surround_vim_settings.vim
 runtime settings/plugins/vim_rspec_settings.vim
+runtime settings/plugins/notes_settings.vim
+runtime settings/plugins/telescope.vim
+

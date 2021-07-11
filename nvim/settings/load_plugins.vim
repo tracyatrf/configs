@@ -5,6 +5,11 @@ let vundle_path='~/.config/nvim/bundle'
 call vundle#begin(vundle_path)
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'nvim-lua/popup.nvim'
+Plugin 'nvim-lua/plenary.nvim'
+
+Plugin 'ludovicchabant/vim-gutentags'
+
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'kana/vim-textobj-user'
 Plugin 'rhysd/vim-textobj-ruby'
@@ -13,16 +18,15 @@ Plugin 'elixir-editors/vim-elixir'
 Plugin 'udalov/kotlin-vim'
 
 Plugin 'neomake/neomake'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 Plugin 'Shougo/deoplete.nvim'
-"Plugin 'fishbullet/deoplete-ruby'
 Plugin 'etordera/deoplete-ruby'
 Plugin 'hwartig/vim-seeing-is-believing'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
-Plugin 'skywind3000/asyncrun.vim'
 
 Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
@@ -39,7 +43,8 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 
 "Plugin 'MaxMEllon/vim-jsx-pretty'
-Plugin 'arcticicestudio/nord-vim'
+"Plugin 'arcticicestudio/nord-vim'
+Plugin 'nvim-telescope/telescope.nvim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

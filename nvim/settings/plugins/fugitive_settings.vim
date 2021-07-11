@@ -1,5 +1,5 @@
-nnoremap gd :Gdiff<CR>
-nnoremap gs :Gstatus<CR>
+"nnoremap gd :Gdiff<CR>
+"nnoremap gs :Gstatus<CR>
 nnoremap du :diffupdate<CR>
 nnoremap gc :Gcommit<CR>
 

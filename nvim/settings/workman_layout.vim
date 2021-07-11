@@ -34,4 +34,6 @@ vnoremap h y
 vnoremap y h
 nnoremap H Y
 nnoremap Y H
-inoremap <C-e> <C-p>
+imap <C-e> <C-p>
+cnoremap <C-e> <C-p>
+

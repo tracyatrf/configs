@@ -13,6 +13,8 @@ hi tsxComponentName guifg=#E06C75
 hi tsxCloseComponentName guifg=#E06C75
 hi tsxTag guifg=#E06C75
 hi tsxCloseTag guifg=#E06C75
+hi notesCodeStart guifg=#E06C75
+hi notesCodeEnd guifg=#E06C75
 
 " orange
 "
