@@ -8,26 +8,26 @@
 	<true/>
 	<key>Coprocess MRU</key>
 	<array>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/mailers/self_migration_request_mailer_spec.rb +19</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/mailers/organization_evolution_mailer_spec.rb +19</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/app/mailers/self_migration_request_mailer.rb +</string>
-		<string>echo nvim /Users/tmeade/workspace/create-first-organization-admins/src/lib/url.ts +</string>
-		<string>echo nvim /Users/tmeade/workspace/rpm_site/app/controllers/api/v3/accounts_controller.rb +</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/app/models/organization.rb +220</string>
-		<string>echo nvim /Users/tmeade/workspace/rpm_site/test/functional/api/v3/accounts_controller_test.rb +1</string>
-		<string>echo nvim /Users/tmeade/.gem/ruby/2.7.2/extensions/x86_64-darwin-18/2.7.0-static/mysql2-0.3.21/mkmf.log +</string>
-		<string>echo nvim /Users/tmeade/workspace/organizations-ui/src/components/OrganizationDetail.tsx +</string>
-		<string>echo nvim /Users/tmeade/workspace/create-first-organization-admins/src/components/UnexpectedError.tsx +12</string>
-		<string>echo nvim /Users/tmeade/workspace/create-first-organization-admins/src/components/LandingPage.tsx +</string>
-		<string>echo nvim /Users/tmeade/workspace/create-first-organization-admins/src/components/UnexpectedError.tsx +</string>
-		<string>echo nvim /Users/tmeade/dbconsole-nr-env.rb +40</string>
-		<string>echo nvim /Users/tmeade/dbconsole-nr-env.rb +48</string>
-		<string>echo nvim /Users/tmeade/.emacs.d/.cache/layouts/persp-auto-save +</string>
-		<string>echo nvim /Users/tmeade/workspace/evolutionator/app/lib/steps/update_nerd_store_banner_flags_step.rb +11</string>
-		<string>echo nvim /Users/tmeade/workspace/create-first-organization-admins/nerdlets/create-first-organization-admins/index.tsx +</string>
-		<string>echo nvim /Users/tmeade/workspace/create-first-organization-admins/src/types/index.d.ts +</string>
-		<string>echo nvim /Users/tmeade/workspace/create-first-organization-admins/src/components/SetupComplete.tsx +</string>
-		<string>echo nvim /Users/tmeade/workspace/create-first-organization-admins/src/components/SetupComplete.tsx +5</string>
+		<string>echo nvim /Users/tmeade/workspace/oa-alerts-terraform/main.tf +</string>
+		<string>echo nvim /Users/tmeade/workspace/oa-terraform/user-lifecycle/base_setup/main.tf +</string>
+		<string>echo nvim /Users/tmeade/workspace/oa-terraform/user-lifecycle/services/queue/formatted_user_stream_queue/main.tf +</string>
+		<string>echo nvim /Users/tmeade/workspace/aaa-tools/dbconsole-nr-env/dbconsole-nr-env +</string>
+		<string>echo nvim /Users/tmeade/workspace/aaa-tools/dbconsole-nr-env/dbconsole-nr-env +40</string>
+		<string>echo nvim /Users/tmeade/workspace/organizations-ui/package-lock.json +</string>
+		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/models/organization_spec.rb +1019</string>
+		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/requests/cleanup_v1_users_spec.rb +</string>
+		<string>echo nvim /Users/tmeade/workspace/organization-service/authentication_domain_service/spec/controllers/v0/authentication_domains_controller_spec.rb +50</string>
+		<string>echo nvim /Users/tmeade/workspace/organization-service/authentication_domain_service/spec/controllers/scim_configurations_controller_spec.rb +92</string>
+		<string>echo nvim /Users/tmeade/workspace/organization-service/authentication_domain_service/spec/controllers/scim_configurations_controller_spec.rb +29</string>
+		<string>echo nvim /Users/tmeade/workspace/organization-service/authentication_domain_service/spec/controllers/scim_configurations_controller_spec.rb +4</string>
+		<string>echo nvim /Users/tmeade/workspace/organization-service/authentication_domain_service/spec/controllers/scim_configurations_controller_spec.rb +261</string>
+		<string>echo nvim /Users/tmeade/workspace/organization-service/authentication_domain_service/spec/rails_helper.rb +20</string>
+		<string>echo nvim /Users/tmeade/workspace/organization-service/authentication_domain_service/spec/rails_helper.rb +9</string>
+		<string>echo nvim /Users/tmeade/workspace/organization-service/authentication_domain_service/spec/controllers/scim_configurations_controller_spec.rb +1</string>
+		<string>echo nvim /Users/tmeade/workspace/organization-service/authentication_domain_service/spec/controllers/scim_configurations_controller_spec.rb +23</string>
+		<string>echo nvim /Users/tmeade/workspace/evolutionator/spec/lib/api/current_organization_data_spec.rb +270</string>
+		<string>echo nvim /Users/tmeade/workspace/rpm_site/test/functional/api/v3/accounts_controller_test.rb +690</string>
+		<string>echo nvim /Users/tmeade/workspace/rpm_site/test/functional/api/v3/accounts_controller_test.rb +</string>
 	</array>
 	<key>Custom Color Presets</key>
 	<dict>

@@ -49,3 +49,5 @@ command! If exec "normal gg=G"
 " open and source vimrc
 command! Vo :tabe $MYVIMRC
 command! Vs :so $MYVIMRC | :AirlineRefresh
+
+command! Quoted :%s/^/'/ | :%s/$/',/ | :%j | :normal $x^
