@@ -19,6 +19,22 @@ nnoremap <leader>i <cmd>Telescope help_tags<cr>
 
 nnoremap <C-F> <C-D>
 
+let g:asyncrun_trim = 1
+command! -nargs=1 AG
+      \ call setqflist([])
+      \ | execute 'AsyncRun! ag --path-to-ignore ~/.config/nvim/.ignore ' . <q-args>
+      \ | execute 'redraw'
+      \ | execute 'copen'
+
+
+fun! s:sub(options, search, replace)
+    execute ':normal mZ'
+    execute 'args `find . -type f`'
+    execute 'argdo %s/' . a:search . '/' . a:replace . '/' . a:options
+    execute ":normal `Z"
+  endfun
+command! -nargs=+ FR call s:sub(<f-args>)
+
 " Quicklish shortcuts
 nnoremap <C-e> :cp<CR>zvzz
 nnoremap <C-n> :cn<CR>zvzz

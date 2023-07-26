@@ -41,7 +41,7 @@ command! Ws :%s/\s\+$//e
 
 " Tags
 command! CT :!ctags -R .
-command! RT :!ripper-tags -R .
+command! RT :!ripper-tags -R --exclude=node_modules .
 
 " Reindent File
 command! If exec "normal gg=G"

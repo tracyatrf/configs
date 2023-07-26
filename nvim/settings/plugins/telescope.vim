@@ -10,7 +10,8 @@ local actions = require('telescope.actions')
 ------------------------------
 require('telescope').setup{
   defaults = {
-    file_ignore_patterns = { '/tags' },
+    layout_strategy = "flex",
+    file_ignore_patterns = { '/tags.*',"./node_modules/*", "node_modules", "^node_modules/*", "node_modules/*" },
     mappings = {
       i = {
         ["<C-s>"] = actions.file_split;

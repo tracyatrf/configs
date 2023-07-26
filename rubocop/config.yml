@@ -19,8 +19,14 @@ Style/FrozenStringLiteralComment:
 Metrics/BlockLength:
   Enabled: false
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 100
 
 Layout/SpaceBeforeBlockBraces: 
   Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+AllCops:
+  NewCops: disable

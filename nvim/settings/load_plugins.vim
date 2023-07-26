@@ -7,7 +7,9 @@ call vundle#begin(vundle_path)
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'nvim-lua/popup.nvim'
 Plugin 'nvim-lua/plenary.nvim'
+Plugin 'BurntSushi/ripgrep'
 
+Plugin 'mhartington/oceanic-next'
 Plugin 'ludovicchabant/vim-gutentags'
 
 Plugin 'vim-ruby/vim-ruby'
@@ -26,7 +28,9 @@ Plugin 'hwartig/vim-seeing-is-believing'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 Plugin 'vim-airline/vim-airline'
+Plugin 'skywind3000/asyncrun.vim'
 
 Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'

@@ -3,5 +3,8 @@
 nnoremap du :diffupdate<CR>
 nnoremap gc :Gcommit<CR>
 
+command Gblame Git blame
+nnoremap gc :Gcommit<CR>
+
 let g:fugitive_no_maps = 1
 

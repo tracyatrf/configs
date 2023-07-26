@@ -1,7 +1,7 @@
 augroup NERDy
   autocmd!
   autocmd FileType tagbar,nerdtree setlocal signcolumn=no
-  autocmd VimEnter * if !argc() | NERDTree | endif
+"  autocmd VimEnter * if !argc() | NERDTree | endif
   "autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
 augroup END
 

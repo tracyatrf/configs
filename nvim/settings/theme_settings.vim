@@ -1,6 +1,7 @@
 set noshowmode
 set background=dark
 colorscheme deep-space-one
+"colorscheme OceanicNext
 "colorscheme nord
 let g:airline_theme='deep_space_one'
 let g:airline_powerline_fonts = 1
